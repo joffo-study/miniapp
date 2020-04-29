@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/account/account",
+    "pages/account/answer/answer",
+    "pages/account/askList/askList",
+    "pages/index/index",
+    "pages/doctor/doctor",
+    "pages/account/register/register",
+    "pages/account/login/login",
+    "pages/search/search",
+    "pages/account/family/family",
+    "pages/upload/page/page",
+    "pages/doctor/consulting/consulting"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "康达互联网医院",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#11cd6e",
+    "borderStyle": "black",
+    "list": [
+      {
+        "text": "咨询",
+        "pagePath": "pages/index/index",
+        "iconPath": "images/tagbar/consulting.png",
+        "selectedIconPath": "images/tagbar/consulting_on.png"
+      },
+      {
+        "text": "我的",
+        "pagePath": "pages/account/account",
+        "iconPath": "images/tagbar/me.png",
+        "selectedIconPath": "images/tagbar/me_on.png"
+      }
+    ]
+  },
+  "usingComponents": {
+    "msg": "/component/Toast/Toast"
+  }
+}

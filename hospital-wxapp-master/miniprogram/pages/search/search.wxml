@@ -1,0 +1,62 @@
+<form class="search-box row-box {{searchClass}}" bindsubmit="searchName">
+  <input
+    placeholder="搜索医生"
+    placeholderClass="search-placeholder"
+    name="name"
+    type="text"
+    confirm-type="search"
+    bindconfirm="searchName"
+  ></input>
+  <icon class="iconfont icon-sousuo">
+    <button form-type='submit'>x</button>
+  </icon>
+</form>
+<view class="type-list-tag row-box" wx:if="{{!results[0]}}">按照科室查找</view>
+<view class="type-list-tag row-box" bindtap="clearResults"  wx:else>
+  <button size="mini" type="primary" style="float:left">返回</button>
+  <text>查找结果（{{ results.length }}）</text>
+</view>
+<view class="row-box type-list">
+  <block wx:if="{{!results[0]}}">
+    <view class="type-list-left">
+      <view
+        wx:for="{{all}}"
+        wx:key="key"
+        class="{{index == listSelect ? 'select' : '' }}"
+        data-i="{{index}}"
+        bindtap="unSelect"
+      >
+        <icon class="iconfont icon-{{item.icon}}"></icon>
+        <text>{{item.tag}}</text>
+      </view>
+    </view>
+    
+    <block wx:for="{{all}}" wx:if="{{index == listSelect}}" wx:key="key">
+      <view class="type-list-right" bindtap="search">
+        <view wx:for="{{item.list}}" wx:key="key" data-subdepId="{{item.id}}">{{item.name}}</view>
+      </view>
+    </block>
+  </block>
+
+  <block wx:else>
+
+    <scroll-view class='doctor-scroll' scroll-y>
+    
+      <view
+        class="doctor"
+        wx:for="{{results}}"
+        wx:key="key"
+        bindtap="doctorPage"
+        data-doctor="name={{item.name}}&sex={{item.l_sex}}&id={{item.id}}&tags={{item.tag}}"
+      >
+        <image src="/images/avatar_1.jpg" class="user-icon"></image>
+        <text class="doctor-name">{{item.name}}</text>
+        <text class="doctor-tag">{{item.tag}}</text>
+      </view>
+      
+    </scroll-view>
+
+  </block>
+  
+</view>
+<msg data="{{toast}}"></msg>

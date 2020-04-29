@@ -1,0 +1,37 @@
+<view class="content">
+<form bindsubmit='formsubmit' bindreset='formreset'>
+
+<view class="section">
+<view class='section_title'>想去的国家</view>
+<checkbox-group name='region'>
+<label class='checkbox' wx:for="{{regions}}">
+<checkbox value='{{item.name}}' checked='{{item.checked}}'/>{{item.value}}
+</label>
+</checkbox-group>
+</view>
+
+<view class='section'>
+<view class='section_title'>出发日期</view>
+<picker mode='date' name='data1' value='{{data}}' start='2016-01-01' end='2018-01-01' bindchange='binddata'>
+<view class='picker'>
+{{data}}
+</view>
+</picker>
+</view>
+
+<view class='section'>
+<view class='section_title'>出发时间</view>
+<picker mode='time' name='time1' value='{{time}}' start='08:00' end='21:00' bindchange='bindtime'>
+<view class='picker'>
+{{time}}
+</view>
+</picker>
+</view>
+
+<view class='btn-area'>
+<button formType='submit' type='primary'>提交</button>
+<button formType='reset' >重置</button>
+</view>
+
+</form>
+</view>

@@ -1,0 +1,10 @@
+.section_title{
+  margin-bottom: 16rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+
+}
+
+.button{
+  margin: 20rpx 0;
+}

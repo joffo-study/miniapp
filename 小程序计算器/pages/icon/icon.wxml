@@ -1,0 +1,18 @@
+<view class='content'>
+<view class='group'>
+<block wx:for="{{iconSize}}">
+<icon type='success' size='{{item}}'/>
+</block>
+</view>
+
+<view class='group'>
+<block wx:for="{{iconType}}">
+<icon size='45' type='{{item}}'/>
+</block>
+</view>
+<view class='group'>
+<block wx:for="{{iconColor}}">
+<icon type='success' color='{{item}}' size='45'/>
+</block>
+</view>
+</view>
